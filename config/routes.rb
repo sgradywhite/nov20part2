@@ -120,7 +120,6 @@ Rails.application.routes.draw do
 
     resources :appointments
 
-    resources :confirm_appointment
-    resources :cancel_appointment
+    
 
 end
