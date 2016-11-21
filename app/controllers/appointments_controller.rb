@@ -65,7 +65,12 @@ class AppointmentsController < ApplicationController
 
   def check
     @pending = Appointment.limit(10)
-    
+    if user_signed_in?
+        UserMailer.confirm_appointment(u.users_id, u.id).deliver
+        flash[:info] = "You have Confirm the Patient for Appointment and it has been sent to the Patient!"
+        redirect_to root_url
+    else
+    end  
   end
 
   private
