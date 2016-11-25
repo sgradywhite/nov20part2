@@ -7,7 +7,11 @@
 
      
       <%= submit_tag 'Search', class: 'btn search-button' %>
+      
     <% end %>
+    
+  
+    
   </div>
 </div>
 
@@ -16,10 +20,13 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>ID</th>
+          <th>Users ID</th>
           <th>Date</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Specialty</th>
+          <th>Status</th>
          
          
           <th></th>
@@ -31,10 +38,13 @@
       <tbody>
         <% @appointments.each do |appointment| %>
           <tr>
+            <td><%= appointment.id %></td>
+            <td><%= appointment.users_id %></td>
             <td><%= appointment.date.strftime("%Y-%m-%d - %H-%M") %></td>
             <td><%= appointment.firstname %></td>
             <td><%= appointment.lastname %></td>
             <td><%= appointment.specialty %></td>
+            <td><%= appointment.status %></td>
         
             
             <td><%= link_to 'Show', appointment, class: 'btn btn-mini' %></td>
@@ -47,6 +57,8 @@
   </div>
 </div>
 <br>
+
+
 
 <%= link_to 'New Appointment', new_appointment_path %>
 <p></p>

@@ -7,10 +7,13 @@ class UsersController < ApplicationController
     before_action :patient_user,   only: :destory
 
      def index
+         
          @users = User.paginate(page: params[:page])
+         
      end
 
      def show
+         
          @user = User.find(params[:id])
              if @user.role == "admin"
                redirect_to(admin_page_url)
@@ -27,7 +30,6 @@ class UsersController < ApplicationController
          @user = User.new
      end
       
-
      def admin_page
      end
 
@@ -104,8 +106,10 @@ class UsersController < ApplicationController
          
            
      end
+     
 
      def confirmappointment
+         @user = abc
 
          @allergys = Appointment.where(:specialty => "Allergy")
      end

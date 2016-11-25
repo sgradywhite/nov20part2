@@ -99,8 +99,10 @@ Rails.application.routes.draw do
 
     get   'checkappointment' => 'appointments#check'
 
-    get    'userappointment' => 'users#appointment'
+    
+    get    'userappointment' => 'patients#appointment'
     get    'confirmappointment' => 'users#confirmappointment'
+    
     get    'usersearch' => 'users#search'
     get    'userdatabase' => 'users#database'
     get    'userfile'  => 'users#file'
@@ -112,15 +114,21 @@ Rails.application.routes.draw do
     get 'patient_page' => 'users#patient_page'
 
     get    'createaccount'  => 'admins#new'
-    post     '/createaccount',  to: 'admins#create'
+    post    '/createaccount',  to: 'admins#create'
+    
+    get   'checkstatus' => 'appointments#checkstatus'
+    post  'checkstatus' => 'appointments#checkstatus'
+    
+    
 
     resources :users
     resources :account_activations, only: [:edit]
     resources :password_resets,     only: [:new, :create, :edit, :update]
 
     resources :appointments
+    
+    resources :patients
 
-    resources :confirm_appointment
-    resources :cancel_appointment
+    
 
 end

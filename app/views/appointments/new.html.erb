@@ -13,6 +13,20 @@
       </div>
     <% end %>
   
+   <div class="control-group">
+      <%= f.label :id, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :id %>
+      </div>
+    </div>  
+    
+    <div class="control-group">
+      <%= f.label :users_id, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :users_id %>
+      </div>
+    </div>
+  
     <div class="control-group">
       <%= f.label :date, class: 'control-label' %><br>
       <div class="controls">
@@ -35,6 +49,12 @@
       <%= f.label :specialty, class: 'control-label' %><br>
       <div class="controls">
         <%= f.collection_select :specialty, User.where(:role => "doctor"), :specialty, :specialty, prompt: 'Choose Doctor ' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :status, class: 'control-label' %><br>
+      <div class="controls">
+          <%= f.select :status, %w(Pending Confirm Select nil) %>
       </div>
     </div>
     <div class="control-group">

@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ID:</strong>
+  <%= @appointment.id %>
+</p>
+
+<p>
+  <strong>Users ID:</strong>
+  <%= @appointment.users_id %>
+</p>
+
+<p>
   <strong>Date:</strong>
   <%= @appointment.date %>
 </p>
@@ -20,7 +30,17 @@
   <%= @appointment.specialty %>
 </p>
 
+<p>
+  <strong>Status:</strong>
+  <%= @appointment.status %>
+</p>
 
 
+
+
+<% if current_user.role == "patient" %>
+<% else %>
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> | 
 <%= link_to 'Back', appointments_path %>
+<% end %>
+
