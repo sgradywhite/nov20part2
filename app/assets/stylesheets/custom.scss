@@ -443,6 +443,38 @@ position: absolute;
 	background-color: empty;
 	border: 2px solid none;
 }
+.doctortitletab{
+	position: relative;
+	width: 400px;
+	height: 60px;
+
+	top: 49px;
+
+	border: 2px solid black;
+	background-color: white;
+}
+.doctortab1{
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	width: 195px;
+	left: 0px;
+  bottom: 0px;
+	background-color: empty;
+	border-right: 2px solid black;
+
+}
+.doctortab2{
+	position: absolute;
+	text-align: center;
+	width: 195px;
+
+	top: 0px;
+  bottom: 0px;
+	left: 200px;
+	background-color: empty;
+	border-right: 2px solid none;
+}
 .officebackground{
 	position: absolute;
 	left: 0px;
