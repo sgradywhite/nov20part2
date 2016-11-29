@@ -230,31 +230,53 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
-
-
-
-
-
 .background{
 	position: absolute;
 	left: 0px;
   right: 0px;
   top: 0px;
-  bottom: 0px;
+
+  margin-bottom: 0px;
 	margin: 0px auto;
-	border: 2px solid #1a75ff;
+	border: 2px solid none;
 
 	}
+  html,
+  body {
+  	margin:0;
+  	padding:0;
+  	height:100%;
+  }
+  #wrapper {
+	min-height:100%;
+	position:relative;
+}
+#content {
+	padding-bottom:100px; /* Height of the footer element */
+}
+#backgroundfooter{
+    background:#1a75ff;
+    width:100%;
+    height:50px;
+    position: absolute;
+    bottom:0;
+    left:0;
+
+}
+
+
 
 .btn{
 	margin-top: 5px;
 
 }
 .btnSignUp{
+
   display: block;
   margin: 0 auto;
   width: 100px;
   height: 50px;
+  margin-bottom: 20px;
   border: 1px solid none;
 }
 .btnSearch{
@@ -303,7 +325,9 @@ input {
 
 }
 .titletab{
+
 	position: relative;
+  margin: 0 auto;
 	width: 1000px;
 	height: 60px;
 	top: 49px;
@@ -382,7 +406,7 @@ position: absolute;
 	height: 60px;
 
 	top: 49px;
-	
+
 	border: 2px solid black;
 	background-color: white;
 }
@@ -436,7 +460,7 @@ position: absolute;
 	height: 60px;
 
 	top: 49px;
-	
+
 	border: 2px solid black;
 	background-color: white;
 }
@@ -500,6 +524,29 @@ h7, h8, h9, h10, h11 {
 }
 
 .multi-column-dropdown{
+		list-style: none;
+}
+.dropdown3 {
+    position: relative;
+    display: inline-block;
+}
+.dropdown3-content3 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    line-height: 2;
+    text-align: center;
+    right: 0px;
+}
+.dropdown3:hover .dropdown3-content3 {
+    display: block;
+}
+
+.multi-column-dropdown3{
 		list-style: none;
 }
 
@@ -698,7 +745,7 @@ h12{
     position: absolute;
     display: inline-block;
 }
-.dropdown-content2 {
+.dropdown2-content2 {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -711,8 +758,16 @@ h12{
     left: -420px;
     border: 1px solid black;
 }
-.dropdown2:hover .dropdown-content2 {
+.dropdown2:hover .dropdown2-content2 {
     display: block;
+}
+
+.link-to-text-color {
+   color: black;
+
+  }
+.link-to-text-color:hover{
+  text-decoration: none;
 }
 h13{
   line-height: 1;
@@ -743,7 +798,7 @@ h100{
 	  right: 0;
 	  border: 2px solid none;
 	}
-	
+
 	.appointmentframe{
 	  display: block;
 	  margin: 0px auto;
@@ -752,7 +807,7 @@ h100{
 	  right: 20px;
 	  border: 2px solid black;
 	}
-	
+
 	.appointmentheader{
 	  position: absolute;
 	  height: 100px;
@@ -769,7 +824,7 @@ h100{
 	 width: 2000px;
 	 border: 2px solid black;
 	}
-	
+
 	.databaseheader{
 	  position: absolute;
 	  top: 0px;
@@ -784,7 +839,7 @@ h100{
 	 margin-left:  5px;
 	 margin-right: 5px;
 	 border: 2px solid black;
-	}	
+	}
 .appointmentbackground{
 	position: relative;
 	height: 200px;
@@ -794,10 +849,110 @@ h100{
 	border: 2px solid black;
 }
 .buttonappointment{
-	
+
 	margin-left: 5px;
 	margin-right: 5px;
 	width: 500px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+/* http://www.menucool.com */
+
+#sliderFrame, #sliderFrame div {
+
+    box-sizing: content-box;
+}
+#sliderFrame
+{
+    width:1000px;
+    height:500px;
+    margin:0 auto; /*center-aligned*/
+}
+
+#slider, #slider .sliderInner {
+  position: absolute;
+    width:1000px;height:500px;/* Must be the same size as the slider images */
+    border-radius:3px;
+}
+
+#slider {
+    background-color:white;
+    position:relative;
+    margin:0 auto; /*center-aligned*/
+    transform: translate3d(0,0,0);
+    box-shadow: 0px 1px 5px #999999;
+}
+
+/* the link style (if an image is wrapped by a link) */
+#slider a.imgLink, #slider .video {
+    z-index:2;
+    cursor:pointer;
+    position:absolute;
+    top:0px;left:0px;border:0;padding:0;margin:0;
+    width:100%;height:100%;
+}
+#slider .video {
+    background:transparent url(video.png) no-repeat 50% 50%;
+}
+
+/* Caption styles */
+#slider .mc-caption {
+    position:absolute;
+    width:100%;
+    height:auto;
+    padding:10px 0;/* 10px will increase the height.*/
+    left:0px;
+    bottom:0px;top:auto;
+    overflow:hidden;
+    color:#EEE;
+    text-align:center;
+    background:rgba(0,0,0,0.3);
+    visibility: hidden;
+}
+#slider .mc-caption a {
+    color:#FB0;
+
+}
+#slider .mc-caption a:hover {
+    color:#DA0;
+
+
+}
+
+
+/* ------ built-in navigation bullets wrapper ------*/
+#slider .navBulletsWrapper  {
+    top:460px;
+    text-align:center;
+    background:none;
+    position:relative;
+    z-index:3;
+}
+
+/* each bullet */
+#slider .navBulletsWrapper div
+{
+    width:11px; height:11px;
+    font-size:0;color:White;/*hide the index number in the bullet element*/
+    background:transparent url(bullet.png) no-repeat 0 0;
+    display:inline-block; *display:inline; zoom:1;
+    overflow:hidden;cursor:pointer;
+    margin:0 6px;/* set distance between each bullet*/
+}
+
+#slider .navBulletsWrapper .active {background-position:0 -11px;}
+
+
+/* --------- Others ------- */
+
+#slider img, #slider>b, #slider a>b {
+    position:absolute; border:none; display:none;
+}
+
+#slider .sliderInner {
+    overflow:hidden;
+    position:absolute; top:0; left:0;
+}
+
+#slider>a, #slider video, #slider audio {display:none;}
+#slider div {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}

@@ -14,7 +14,10 @@ class StaticPagesController < ApplicationController
 
     def contact
     end
-    
+
+    def googlemap
+    end
+
 
     def allergyimmunology
     end
@@ -39,121 +42,121 @@ class StaticPagesController < ApplicationController
 
     def cardiovasculardisease
     end
-    
+
     def childadolescentpsychiatry
     end
-    
+
     def childneurology
     end
-    
+
     def clinicalcardiacelectrophysiology
     end
-    
+
     def clinicalpathology
     end
-    
+
     def colonrectalsurgery
     end
-    
+
     def criticalcaremedicine
     end
-    
+
     def dentistry
     end
-    
+
     def dermatology
     end
-    
+
     def diagnosticradiology
     end
-    
+
     def emergencymedicalservices
     end
-    
+
     def endocrinology
     end
-    
+
     def facialplasticreconstrsurgery
     end
-    
+
     def familymedicine
     end
-    
+
     def gastroenterology
     end
-    
+
     def generalsurgery
     end
-    
+
     def geriatricmedicine
     end
-    
+
     def gynecologiconcology
     end
-    
+
     def gynecology
     end
-    
+
     def handsurgery
     end
-    
+
     def headnecksurgery
     end
-    
+
     def hematology
     end
-    
+
     def hospiceandpalliativemedicine
     end
-    
+
     def hyperbaricmedicine
     end
-    
+
     def infectiousdisease
     end
-    
+
     def integrativemedicine
     end
-    
+
     def internalmedicine
     end
-    
+
     def interventionalcardiology
     end
-    
+
     def maternalfetalmedicine
     end
-    
+
     def medicaloncology
     end
-    
+
     def neonatalperinatalmedicine
     end
-    
+
     def nephrology
     end
-    
+
     def neurologicalsurgery
     end
-    
+
     def neurology
     end
-    
+
     def neuroradiology
     end
-    
+
     def nuclearmedicine
     end
-    
+
     def obstetrics
     end
-    
+
     def occupationalmedicine
     end
-    
+
     def ophthalmology
     end
-    
+
     def oralmaxillofacialsurgery
     end
 
@@ -267,5 +270,5 @@ class StaticPagesController < ApplicationController
 
     def vascularsurgery
     end
-    
+
 end

@@ -7,13 +7,13 @@ class UsersController < ApplicationController
     before_action :patient_user,   only: :destory
 
      def index
-         
+
          @users = User.paginate(page: params[:page])
-         
+
      end
 
      def show
-         
+
          @user = User.find(params[:id])
              if @user.role == "admin"
                redirect_to(admin_page_url)
@@ -24,12 +24,13 @@ class UsersController < ApplicationController
              elsif @user.role == "patient"
               redirect_to(root_url)
              end
+             @homepage
      end
 
      def new
          @user = User.new
      end
-      
+
      def admin_page
      end
 
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
 
      def patient_page
          @user = User.find(params[:id])
-             
+
              if @user.role == "patient"
               redirect_to(patient_page_path(current_user))
              end
@@ -89,24 +90,24 @@ class UsersController < ApplicationController
      def database
          @users = User.all
      end
-        
+
     def patient_page
-         
+
     end
-    
+
 
      def appointment
-         
+
 
           @allergys = Appointment.where(:specialty => "Allergy")
           @backproblems = Appointment.where(:specialty => "BackProblems")
 
           @user_options = Appointment.order(:specialty).distinct.pluck(:specialty)
-          
-         
-           
+
+
+
      end
-     
+
 
      def confirmappointment
          @user = abc
@@ -120,23 +121,14 @@ class UsersController < ApplicationController
          params.require(:user).permit(:firstname, :lastname, :email, :password,
                                       :password_confirmation, :role, :specialty)
      end
-    
+
 
      # Before filters
 
      # Confirms the correct user.
      def correct_user
-         @user = User.find(params[:id])
-             if @user.role == "admin"
-               redirect_to(admin_page_url)
-             elsif @user.role == "doctor"
-               redirect_to(doctor_page_url)
-             elsif @user.role == "office"
-              redirect_to(office_page_url)
-             elsif @user.role == "patient"
-              redirect_to(patient_path(current_user))
-             end
-             redirect_to(root_url) unless current_user?(@user)
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
      end
 
      # Confirms an admin user.
@@ -144,5 +136,5 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
          redirect_to(admin_page_url) if current_user.admin?
      end
-    
+
 end

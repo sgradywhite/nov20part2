@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+#  devise_for :users
+    #get 'welcome/index'
+     #root 'welcome#index'
     root                'static_pages#home'
 
     get    'help'    => 'static_pages#help'
     get    'about'   => 'static_pages#about'
     get    'aboutus' => 'static_pages#aboutus'
     get    'contact' => 'static_pages#contact'
+    get    'map' => 'static_pages#googlemap'
 
     get    'allergyimmunology'   => 'static_pages#allergyimmunology'
     get    'anatomicpathology' => 'static_pages#anatomicpathology'
@@ -99,10 +103,10 @@ Rails.application.routes.draw do
 
     get   'checkappointment' => 'appointments#check'
 
-    
+
     get    'userappointment' => 'patients#appointment'
     get    'confirmappointment' => 'users#confirmappointment'
-    
+
     get    'usersearch' => 'users#search'
     get    'userdatabase' => 'users#database'
     get    'userfile'  => 'users#file'
@@ -115,20 +119,36 @@ Rails.application.routes.draw do
 
     get    'createaccount'  => 'admins#new'
     post    '/createaccount',  to: 'admins#create'
-    
+
     get   'checkstatus' => 'appointments#checkstatus'
     post  'checkstatus' => 'appointments#checkstatus'
-    
-    
+
+
 
     resources :users
     resources :account_activations, only: [:edit]
     resources :password_resets,     only: [:new, :create, :edit, :update]
 
     resources :appointments
-    
+
     resources :patients
 
-    
+    # mailbox folder routes
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+
+  resources :conversations do
+      member do
+        post :reply
+        post :trash
+        post :untrash
+      end
+    end
+
+    resources :events
+    get 'gotoeventcalendar' => 'eventcalendars#index'
+    #root 'eventcalendars#index'
+    get 'editmysetting' => 'users#edit'
 
 end

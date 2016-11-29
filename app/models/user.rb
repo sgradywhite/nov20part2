@@ -10,23 +10,34 @@ class User < ApplicationRecord
                          uniqueness: { case_sensitive: false }
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-    
+
+    acts_as_messageable
+
+    def mailboxer_name
+      self.name
+    end
+
+    def mailboxer_email(object)
+      self.email
+    end
+
+
     def admin?
         role == 'admin'
     end
-    
+
     def patient?
         role == 'patient'
     end
-    
+
     def office?
         role == 'office'
     end
-    
+
     def doctor?
         role == 'doctor'
     end
-    
+
     class << self
         # Returns the hash digest of the given string.
         def digest(string)
