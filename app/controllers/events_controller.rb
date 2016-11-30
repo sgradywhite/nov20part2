@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+
   def index
     @events = Event.where(start: params[:start]..params[:end])
   end
@@ -15,6 +16,8 @@ class EventsController < ApplicationController
 
   def edit
   end
+  
+  
 
   def create
     @event = Event.new(event_params)
@@ -24,6 +27,14 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
+    if @event.save
+          UserMailer.event_confirmation(@event.id, current_user).deliver_now
+          
+         
+    else
+    end  
+  end
+  def gotoeventcalendar
   end
 
   def destroy

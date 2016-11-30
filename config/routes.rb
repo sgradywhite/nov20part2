@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     get    'aboutus' => 'static_pages#aboutus'
     get    'contact' => 'static_pages#contact'
     get    'map' => 'static_pages#googlemap'
+    get    'healthwellness' => 'static_pages#healthwellness'
+    get     'schedulepolicy' => 'static_pages#schedulepolicy'
+
 
     get    'allergyimmunology'   => 'static_pages#allergyimmunology'
     get    'anatomicpathology' => 'static_pages#anatomicpathology'
@@ -150,5 +153,5 @@ Rails.application.routes.draw do
     get 'gotoeventcalendar' => 'eventcalendars#index'
     #root 'eventcalendars#index'
     get 'editmysetting' => 'users#edit'
-
+    
 end

@@ -17,7 +17,12 @@ class StaticPagesController < ApplicationController
 
     def googlemap
     end
-
+    
+    def healthwellness
+    end
+    
+    def schedulepolicy
+    end 
 
     def allergyimmunology
     end

@@ -6,8 +6,8 @@
         <div class = "invisibleblock" ></div>
 
         <h1 style = "margin-top: 0px;">This is a Database Page for Admin</h1>
-        
-        <div  class = "databaseframe"> 
+    
+        <div  class = "databaseframe" style = "overflow: scroll;" > 
            
             <table border="1px">
                 <thead>
@@ -59,13 +59,14 @@
             </table>
            
         </div>
-        
+        <div style = "position: absolute;  width: 100%; " >
+        </div>        
+       
+        <div class = "btnDeleteUser" style = "margin-top: 650px;" >
+            <%= link_to "Delete User!", userdatabase_path, class: "btn btn-lg btn-primary" %>
         </div>
-        <div class = "btnDeleteUser" >
-        <%= link_to "Delete User!", userdatabase_path, class: "btn btn-lg btn-primary" %>
-        </div>
-        <div class = "btnSaveUser">
-        <%= link_to "Save!", userdatabase_path, class: "btn btn-lg btn-primary"  %>
+        <div class = "btnSaveUser" style = "margin-top: 10px;" >
+            <%= link_to "Save User!", userdatabase_path, class: "btn2 btn2-lg btn2-primary"  %>
        </div>
     </body>
     

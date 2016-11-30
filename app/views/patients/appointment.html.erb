@@ -67,7 +67,8 @@
 </head>
 <body>
     
-<div class = "invisibleblock" ></div>    
+<div class = "invisibleblock" ></div>  
+  <div style = "margin-left: 100px; margin-right: 100px">
     <h6>Hello:  <%= current_user.firstname %> <%= current_user.lastname %><h6></h6>
     <div>
         
@@ -78,7 +79,7 @@
         
         <%= select_tag(:specialty, options_for_select(@user_options), { include_blank: true })  %>
     </div>
-    
+  </div>    
    
     
     <div class="Allergy box"><h1> Doctor Appointment for Allergy</h1>
@@ -90,11 +91,14 @@
                     
                     <% @allergys.each do |appointment| %>
                            <% if (appointment.status != "Pending" &&  appointment.status != "Confirm"  &&  appointment.status != "NotConfirm") %> 
-                            <button onclick=submitappoint(this)" class = "buttonappointment" id= "<%= appointment.id %>"  >       
-                            <option><label name = "id">ID: <%= appointment.id %></label> <label>Date:  <%= appointment.date %></label><label > <%= appointment.firstname %></label>
-                            <%= appointment.lastname %> <%= appointment.specialty %></option > </button> 
-                            <%= link_to 'Edit', edit_patient_path(appointment), class: 'btn btn-mini btn-success' %>
                             
+                            
+                            <strong style = "margin-left: 10px"><label name = "id">ID: <%= appointment.id %></label> <label>Date:  <%= appointment.date %></label><label > <%= appointment.firstname %></label>
+                            <%= appointment.lastname %> <%= appointment.specialty %>      </strong style = "margin-right: "10px;>  
+                            <%= link_to 'Submit', edit_patient_path(appointment), class: 'btn btn-mini btn-success' %>     
+                               
+                               
+                               
                             <% end %>
                             
                     <% end %>

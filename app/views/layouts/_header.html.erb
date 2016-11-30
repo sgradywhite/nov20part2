@@ -7,11 +7,6 @@
 
     <%= link_to("Bridgeport Medical Center" , root_path , id: "logo" , method: :get) %>
 
-
-
-
-
-
     <nav>
       <ul class="nav navbar-nav navbar-right">
 
@@ -37,8 +32,8 @@
                   <%= link_to "Profile",  (patient_page_url(current_user)) , class: 'link-to-text-color'%>
                 <% end %>
                 <p></p>
-              <%= link_to "Settings", edit_user_path(current_user), class: 'link-to-text-color' %>
-              <hr style: "color: black;">  </hr>
+                <%= link_to "Settings", edit_user_path(current_user), class: 'link-to-text-color' %>
+                <hr style: "color: black;">  </hr>
 
                 <%= link_to "Log out" , logout_path ,  method: "delete", class: 'link-to-text-color' %>
 
