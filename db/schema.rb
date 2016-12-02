@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126194707) do
+ActiveRecord::Schema.define(version: 20161202085703) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer  "users_id"
     t.datetime "date"
     t.string   "firstname"
     t.string   "lastname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "specialty"
     t.string   "status"
+    t.string   "twodaysreminder"
+    t.string   "samedayreminder"
     t.index ["users_id"], name: "index_appointments_on_users_id"
   end
 
