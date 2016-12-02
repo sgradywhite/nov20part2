@@ -15,7 +15,7 @@ every(30.seconds, 'Creating Cycle') {
 
         
 
-              AppointmentMailer.confirm_appointment(User.where(:email => "sgradywhite@yahoo.com"), appointment.find(1).created_at, appointment.find(1).status).deliver_now
+              AppointmentMailer.confirm_appointment(User.where(:email => "sgradywhite@yahoo.com"), appointment.created_at, appointment.status).deliver_now
 
 
         
